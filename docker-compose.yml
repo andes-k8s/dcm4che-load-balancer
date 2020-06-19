@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  reverse:
+    image: haproxy:2.1-alpine
+    restart: unless-stopped
+    container_name: dcm4che_reverse
+    ports:
+      - 83:80
+      - 443:443
+      - 2762:2762
+      - 2575:2575
+      - 11112:11112
+      - 1936:1936
+    volumes:
+      - ./conf:/usr/local/etc/haproxy
+      - ./certs:/etc/ssl/private
