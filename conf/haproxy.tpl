@@ -37,10 +37,7 @@ backend back_default
     http-request set-header X-Forwarded-Port %[dst_port]
     http-response set-header location %[res.hdr(location),regsub(:30443/,/)] if { res.hdr(location) -m found }
     compression algo gzip
-    server httpA1 192.168.68.1:30443 check ssl verify none 
-    server httpA2 192.168.68.2:30443 check ssl verify none 
-    server httpA3 192.168.68.3:30443 check ssl verify none 
-     
+    {{http}}
     
 
 
@@ -49,10 +46,7 @@ listen dicom
     mode tcp
     option tcplog
     balance roundrobin
-    server dicomA1 192.168.68.1:32762 check ssl verify none 
-    server dicomA2 192.168.68.2:32762 check ssl verify none 
-    server dicomA3 192.168.68.3:32762 check ssl verify none 
-     
+    {{dicom}}
 
 
 
@@ -61,10 +55,7 @@ listen hl7
     mode tcp
     option tcplog
     balance roundrobin
-    server hl7A1 192.168.68.1:32575 check ssl verify none 
-    server hl7A2 192.168.68.2:32575 check ssl verify none 
-    server hl7A3 192.168.68.3:32575 check ssl verify none 
-     
+    {{hl7}}
 
 
 
@@ -73,7 +64,4 @@ listen nema
     mode tcp
     option tcplog
     balance roundrobin
-    server nemaA1 192.168.68.1:32112 check ssl verify none 
-    server nemaA2 192.168.68.2:32112 check ssl verify none 
-    server nemaA3 192.168.68.3:32112 check ssl verify none 
-     
+    {{nema}}
