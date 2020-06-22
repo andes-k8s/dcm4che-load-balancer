@@ -36,15 +36,15 @@ while IFS= read -r line; do
     {{http}}/g' nginx.conf > nginx.tmp
     mv nginx.tmp nginx.conf
 
-    sed 's/{{dicom}}/server '$line':32762 \
+    sed 's/{{dicom}}/server '$line':32762; \
     {{dicom}}/g' nginx.conf > nginx.tmp
     mv nginx.tmp nginx.conf    
 
-    sed 's/{{hl7}}/server '$line':32575 \
+    sed 's/{{hl7}}/server '$line':32575; \
     {{hl7}}/g' nginx.conf > nginx.tmp
     mv nginx.tmp nginx.conf      
 
-    sed 's/{{nema}}/server '$line':32112 \
+    sed 's/{{nema}}/server '$line':32112; \
     {{nema}}/g' nginx.conf > nginx.tmp
     mv nginx.tmp nginx.conf        
 
