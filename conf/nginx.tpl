@@ -40,7 +40,6 @@ http {
 stream {
     server { # DICOM
         listen  2762;        
-        health_check;
         proxy_pass kubernetes_dicom;
     }
     upstream kubernetes_dicom {
@@ -49,7 +48,6 @@ stream {
 
     server { # HL7
         listen  2575;        
-        health_check;
         proxy_pass kubernetes_hl7;
     }
     upstream kubernetes_hl7 {
@@ -58,7 +56,6 @@ stream {
 
     server { # NEMA
         listen  11112;        
-        health_check;
         proxy_pass kubernetes_nema;
     }
     upstream kubernetes_nema {

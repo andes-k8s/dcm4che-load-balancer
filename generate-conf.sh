@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Este archivo genera la configuración del Load balancer"
 
