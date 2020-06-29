@@ -16,7 +16,7 @@ counter=1
 cd conf
 cp nginx.tpl nginx.conf
 
-sed 's/{{domain}}/ /g' nginx.conf > nginx.tmp
+sed 's/{{domain}}/'$domain'/g' nginx.conf > nginx.tmp
 mv nginx.tmp nginx.conf
 
 while IFS= read -r line; do
