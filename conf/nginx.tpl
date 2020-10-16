@@ -26,7 +26,7 @@ http {
 
     server { # HTTP
         listen  443 ssl http2;
-        server_name  pacs{{domain}} keycloak-pacs{{domain}} console-pacs{{domain}} visor{{domain}} kibana-pacs{{domain}};
+        server_name  pacs{{domain}} keycloak-pacs{{domain}} console-pacs{{domain}} visor{{domain}} kibana-pacs{{domain}} oviyam{{domain}};
         ssl_certificate /etc/ssl/private/fullchain.pem; 
         ssl_certificate_key /etc/ssl/private/privkey.pem;
         gzip on;
